@@ -1,0 +1,16 @@
+{
+  "sentences": [
+    "26 of 30 units (87%) had at least one excursion outside <=5 C during the recording; the median unit spent 38% of the time in range.",
+    "886 excursion events were found; 7% lasted two hours or more (median 55 min, longest 7200 min).",
+    "The door position runs warmest (mean 6.9 C), 2.0 C above the veg position.",
+    "Out-of-range time peaks around 02:00 (58.9% of unit-time at the worst hour vs 55.8% on average).",
+    "Unit type 'twodoor' spent the least time in range (34% on average) vs 'sidebyside' (52%)."
+  ],
+  "worst_units": [
+    "fridge_002_sidebyside",
+    "fridge_004_twodoor",
+    "fridge_013_twodoor",
+    "fridge_014_sidebyside",
+    "fridge_022_twodoor"
+  ]
+}

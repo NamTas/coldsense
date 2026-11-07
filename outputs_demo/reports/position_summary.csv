@@ -1,0 +1,8 @@
+position,mean_c,p95_c,pct_above_upper_limit
+top,5.92,8.4,68.1
+middle,5.32,7.8,55.8
+veg,4.82,7.3,42.3
+door,6.86,9.4,84.0
+freezer,-6.68,-4.2,0.0
+ambient,30.0,33.0,100.0
+product,5.31,7.3,54.4

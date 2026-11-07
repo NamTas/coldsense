@@ -1,0 +1,5 @@
+{
+  "_help": "Leave this file as it is unless 01_inspect_data.py tells you a column was mapped wrongly. Delete the lines starting with _ if you like.",
+  "_example_sensors": "To fix a column: add  \"sensors\": {\"T1\": \"temp_top\", \"T2\": \"temp_middle\", \"H1\": \"hum_middle\"}  (names must start with temp_ or hum_)",
+  "_example_time": "If the date/time column is not found: add  \"datetime\": \"ColumnName\"   or   \"date\": \"DateCol\", \"time\": \"TimeCol\""
+}

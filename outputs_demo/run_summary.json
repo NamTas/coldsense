@@ -1,0 +1,159 @@
+{
+  "profile": "food",
+  "limit_hi": 5.0,
+  "limit_lo": null,
+  "horizon_min": 30,
+  "demo_data": true,
+  "files_loaded": 30,
+  "unmapped_columns": [],
+  "data_quality": {
+    "fridges": 30,
+    "total_raw_rows": 43200,
+    "duplicate_timestamps": 0,
+    "out_of_range_values": 0,
+    "fridges_with_gaps_over_15min": 0,
+    "fridges_with_frozen_sensor": 0,
+    "median_missing_pct": 0.0
+  },
+  "primary_sensor": "temp_middle",
+  "features": [
+    "p",
+    "p_d1",
+    "p_d3",
+    "p_d6",
+    "p_mean6",
+    "p_std6",
+    "p_mean12",
+    "p_std12",
+    "p_max12",
+    "p_min12",
+    "margin_hi",
+    "mins_over_60",
+    "amb",
+    "amb_d6",
+    "door",
+    "door_jump12",
+    "hum",
+    "hum_d6",
+    "sib_diff",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "risk_models": [
+    {
+      "model": "rule_baseline",
+      "prevalence": 0.1978,
+      "roc_auc": 0.9,
+      "pr_auc": 0.6253,
+      "threshold": 0.66,
+      "precision": 0.5076,
+      "recall": 0.8332,
+      "f1": 0.6309,
+      "val_pr_auc": 0.7741
+    },
+    {
+      "model": "logistic_regression",
+      "prevalence": 0.1978,
+      "roc_auc": 0.8608,
+      "pr_auc": 0.7008,
+      "threshold": 0.48,
+      "precision": 0.6021,
+      "recall": 0.6506,
+      "f1": 0.6254,
+      "val_pr_auc": 0.9666
+    },
+    {
+      "model": "xgboost",
+      "prevalence": 0.1978,
+      "roc_auc": 0.9247,
+      "pr_auc": 0.8404,
+      "threshold": 0.26,
+      "precision": 0.6786,
+      "recall": 0.7572,
+      "f1": 0.7157,
+      "val_pr_auc": 0.9789
+    }
+  ],
+  "final_risk_model": "xgboost",
+  "split_counts": {
+    "train": 18,
+    "val": 5,
+    "test": 7
+  },
+  "test_fridges": [
+    "fridge_002_sidebyside",
+    "fridge_011_sidebyside",
+    "fridge_012_onedoor",
+    "fridge_015_onedoor",
+    "fridge_020_sidebyside",
+    "fridge_023_sidebyside",
+    "fridge_026_sidebyside"
+  ],
+  "split_fridges": {
+    "train": [
+      "fridge_003_onedoor",
+      "fridge_004_twodoor",
+      "fridge_005_sidebyside",
+      "fridge_006_onedoor",
+      "fridge_007_twodoor",
+      "fridge_010_twodoor",
+      "fridge_013_twodoor",
+      "fridge_014_sidebyside",
+      "fridge_016_twodoor",
+      "fridge_017_sidebyside",
+      "fridge_019_twodoor",
+      "fridge_021_onedoor",
+      "fridge_022_twodoor",
+      "fridge_024_onedoor",
+      "fridge_025_twodoor",
+      "fridge_027_onedoor",
+      "fridge_028_twodoor",
+      "fridge_029_sidebyside"
+    ],
+    "val": [
+      "fridge_001_twodoor",
+      "fridge_008_sidebyside",
+      "fridge_009_onedoor",
+      "fridge_018_onedoor",
+      "fridge_030_onedoor"
+    ],
+    "test": [
+      "fridge_002_sidebyside",
+      "fridge_011_sidebyside",
+      "fridge_012_onedoor",
+      "fridge_015_onedoor",
+      "fridge_020_sidebyside",
+      "fridge_023_sidebyside",
+      "fridge_026_sidebyside"
+    ]
+  },
+  "anomaly_eval": {
+    "events_injected": 28,
+    "event_recall_overall": 1.0,
+    "event_recall_by_type": {
+      "drift": 1.0,
+      "dropout": 1.0,
+      "spike": 1.0,
+      "stuck": 1.0
+    },
+    "false_alarm_rate_on_normal_rows": 0.010229276895943563,
+    "threshold": 0.6303146160283912
+  },
+  "anomaly_features": [
+    "p_d1",
+    "p_std6",
+    "p_std12",
+    "flat_run",
+    "sib_diff",
+    "dev_mean12"
+  ],
+  "anomaly_threshold": 0.6303146160283912,
+  "n_excursion_events": 886,
+  "insights": [
+    "26 of 30 units (87%) had at least one excursion outside <=5 C during the recording; the median unit spent 38% of the time in range.",
+    "886 excursion events were found; 7% lasted two hours or more (median 55 min, longest 7200 min).",
+    "The door position runs warmest (mean 6.9 C), 2.0 C above the veg position.",
+    "Out-of-range time peaks around 02:00 (58.9% of unit-time at the worst hour vs 55.8% on average).",
+    "Unit type 'twodoor' spent the least time in range (34% on average) vs 'sidebyside' (52%)."
+  ]
+}
